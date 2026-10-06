@@ -1,0 +1,18 @@
+name: AirDrops
+version: 1.0.0
+main: ru.airdrops.AirDropsPlugin
+api-version: '1.21'
+author: AirDrops
+description: Airdrops (FunTime style) - rarity, hologram countdown, big chest menu
+commands:
+  airdrops:
+    description: Информация об аирдропах
+    usage: /airdrops [spawn|remove|reload]
+    aliases: [airdrop, ad]
+permissions:
+  airdrops.use:
+    description: Смотреть /airdrops
+    default: true
+  airdrops.admin:
+    description: Админ-команды аирдропов
+    default: op

@@ -1,0 +1,61 @@
+# ===== AirDrops config =====
+world: world            # мир, где появляются аирдропы
+center-x: 0             # центр области спавна
+center-z: 0
+min-radius: 300         # минимум блоков от центра
+max-radius: 3000        # максимум блоков от центра
+interval-minutes: 7     # раз в сколько минут появляется аирдроп
+only-if-players-online: true   # не спавнить, если на сервере никого нет
+lifetime-after-open-seconds: 600  # сколько живёт открытый сундук, если его не залутали
+show-next-location: true  # показывать в /airdrops координаты следующего дропа
+pre-announce-seconds: 60  # предупреждение в чате за N секунд (0 = выкл)
+
+# Редкости: name (цвета &), block (блок сундука), weight (шанс выпадения), open-delay-seconds (ожидание до открытия)
+rarities:
+  COMMON:
+    name: "&7Обычный"
+    block: BARREL
+    weight: 55
+    open-delay-seconds: 30
+  RARE:
+    name: "&9Редкий"
+    block: CHEST
+    weight: 28
+    open-delay-seconds: 40
+  EPIC:
+    name: "&5Эпический"
+    block: ENDER_CHEST
+    weight: 14
+    open-delay-seconds: 50
+  LEGENDARY:
+    name: "&6Легендарный"
+    block: BEACON
+    weight: 3
+    open-delay-seconds: 60
+
+messages:
+  prefix: "&6&l[Аирдроп] &r"
+  pre-announce: "{prefix}&eЧерез &f{time} &eпоявится аирдроп!"
+  spawned:
+    - ""
+    - "{prefix}&eАирдроп &f#{id} &e({rarity}&e) приземлился!"
+    - "{prefix}&7Координаты: &fX: {x} Y: {y} Z: {z} &7({world})"
+    - "{prefix}&7Откроется через &f{delay} &7сек."
+    - ""
+  ready: "{prefix}&aАирдроп &f#{id} &a({rarity}&a) открыт! &7X: {x} Y: {y} Z: {z}"
+  looted: "{prefix}&7Аирдроп &f#{id} &7был полностью залутан."
+  expired: "{prefix}&7Аирдроп &f#{id} &7исчез."
+  not-ready: "{prefix}&cСундук откроется через &f{time}"
+  holo-closed: "&fОткроется через &e{time}"
+  holo-ready: "&aМожно открыть! &7({time})"
+  gui-title: "&8Аирдроп #{id}"
+  info-next: "{prefix}&eСледующий аирдроп через &f{time}"
+  info-next-loc: "{prefix}&7Примерные координаты: &fX: {x} Z: {z} &7({world})"
+  info-none: "{prefix}&7Активных аирдропов сейчас нет."
+  info-active-header: "{prefix}&eАктивные аирдропы:"
+  info-active-closed: "&7#{id} {rarity} &7— &fX: {x} Y: {y} Z: {z} &7— откроется через &e{time}"
+  info-active-open: "&7#{id} {rarity} &7— &fX: {x} Y: {y} Z: {z} &7— &aоткрыт"
+  no-permission: "{prefix}&cНет прав."
+  reloaded: "{prefix}&aКонфиг перезагружен."
+  removed: "{prefix}&7Удалено аирдропов: &f{count}"
+  spawn-failed: "{prefix}&cНе удалось заспавнить аирдроп."
